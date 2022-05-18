@@ -20,14 +20,28 @@ public class Main {
         }
 
         List<Melon> bailan = Filters.filterByType(melons, "Bailan");
-        System.out.println("Lista filtrada: ");
+        System.out.println("\nLista filtrada tipo: ");
         for (int i = 0; i < bailan.size(); ++i) {
             System.out.println(bailan.get(i).toString());
         }
 
+        List <Melon> found =Filters.filterByWeight(melons, 1200);
+        System.out.println("\nLista filtrada pesos: ");
+        for (Melon m: found) {
+            System.out.println(m);
+        }
 
+        List <Melon> found2 =Filters.filterByWeightMore(melons, 1300);
+        System.out.println("\nLista filtrada pesos mayores: ");
+        for (Melon m: found2) {
+            System.out.println(m);
+        }
 
-
+        List <Melon> found3 =Filters.filterByWeightMenor(melons, 4000);
+        System.out.println("\nLista filtrada pesos menores: ");
+        for (Melon m: found3) {
+            System.out.println(m);
+        }
 
     }
 

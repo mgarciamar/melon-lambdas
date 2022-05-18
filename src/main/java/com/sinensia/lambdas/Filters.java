@@ -33,4 +33,59 @@ public final class Filters {
         }
         return tipos;
     }
+
+    public static List<Melon> filterByWeight(List<Melon> melons, int i) {
+        if (melons == null || i <= 0) {
+            throw new IllegalArgumentException("Melons cannot null");
+        }
+
+        if (melons.isEmpty()) {
+            return melons;
+        }
+        List<Melon> pesos = new ArrayList<>();
+
+        for (Melon melon: melons){
+            if (melon.getWeight()==i) {
+                pesos.add(melon);
+            }
+        }
+        return pesos;
+    }
+
+    public static List<Melon> filterByWeightMore(List<Melon> melons, int i) {
+        if (melons == null || i <= 0) {
+            throw new IllegalArgumentException("Melons cannot null");
+        }
+
+        if (melons.isEmpty()) {
+            return melons;
+        }
+        List<Melon> pesos = new ArrayList<>();
+
+        for (Melon melon: melons){
+            if (melon.getWeight()>i) {
+                pesos.add(melon);
+            }
+        }
+        return pesos;
+    }
+
+    public static List<Melon> filterByWeightMenor (List<Melon> melons, int i) {
+        if (melons == null || i <= 0) {
+            throw new IllegalArgumentException("Melons cannot null");
+        }
+
+        if (melons.isEmpty()) {
+            return melons;
+        }
+        List<Melon> pesos = new ArrayList<>();
+
+        for (Melon melon: melons){
+            if (melon.getWeight()<i) {
+                pesos.add(melon);
+            }
+        }
+        return pesos;
+    }
+
 }
