@@ -68,12 +68,19 @@ public class Main {
             System.out.println(m);
         }
 
-        System.out.println("Lista sandias: ");
+        System.out.println("\nLista sandias: ");
         List<Melon> watermelons = Filters.filter(melons, (Melon m)->m.getType().equalsIgnoreCase("watermelon"));
         for(Melon m: watermelons) {
             System.out.println(m);
         }
+        System.out.println("\nStream de melones:");
+        melons.stream()
+                .forEach(melon -> System.out.println(melon));
 
+        System.out.println("\nStream de melones filtrado:");
+        melons.stream()
+                .filter(melon -> "gac".equalsIgnoreCase(melon.getType()))
+                .forEach(melon -> System.out.println(melon));
 
         }
 
