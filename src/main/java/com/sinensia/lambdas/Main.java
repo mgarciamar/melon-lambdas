@@ -1,8 +1,8 @@
 package com.sinensia.lambdas;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 public class Main {
 
@@ -81,6 +81,29 @@ public class Main {
         melons.stream()
                 .filter(melon -> "gac".equalsIgnoreCase(melon.getType()))
                 .forEach(melon -> System.out.println(melon));
+
+        System.out.println("\nPrimer elemento del Stream:");
+
+        //primera forma de hacerlo
+        Optional<Melon> primero = melons.stream()
+                .findFirst();
+        if(primero.isPresent()){
+            System.out.println(primero.get());
+        }
+        primero.ifPresent(melon -> System.out.println(melon));
+
+        //segunda forma (mejor) de hacerlo
+        melons.stream()
+                .findFirst()
+                .ifPresent(melon -> System.out.println(melon));
+
+        melons.stream()
+                .mapToInt(melon -> melon.getWeight())
+                .average()
+                .ifPresent(average -> System.out.println("\nPeso promedio: " +average));
+
+
+
 
         }
 
