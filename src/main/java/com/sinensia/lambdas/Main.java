@@ -63,6 +63,18 @@ public class Main {
             System.out.println(m);
         }
 
+        System.out.println("Lista melones europeos: ");
+        for(Melon m:  Filters.filterMelons(melons, melon -> melon!=null && melon.getOrigin().equalsIgnoreCase("Europe"))) {
+            System.out.println(m);
+        }
+
+        System.out.println("Lista sandias: ");
+        List<Melon> watermelons = Filters.filter(melons, (Melon m)->m.getType().equalsIgnoreCase("watermelon"));
+        for(Melon m: watermelons) {
+            System.out.println(m);
+        }
+
+
         }
 
     }
