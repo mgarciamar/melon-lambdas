@@ -88,4 +88,19 @@ public final class Filters {
         return pesos;
     }
 
+    public static List<Melon> filterMelons(List<Melon> melons, MelonPredicate predicate) {
+
+        if(melons==null) {
+            //peto
+        }
+
+        List<Melon> result = new ArrayList<>();
+        for (Melon melon: melons){
+            if(melon!=null && predicate.test(melon)) {
+                result.add(melon);
+            }
+        }
+        return result;
+    }
+
 }
