@@ -88,6 +88,13 @@ public final class Filters {
         return pesos;
     }
 
+    /*Este método está creado en concreto para trabajar con objetos de la clase Melon.
+    Recibe  la lista de melones, y un objeto de la Interface MelonPredicate.
+    Comprueba que la lista de melones no sea null y llama al método test() para comprobar lo que
+    se quiera comprobar, dependiendo del tipo de objeto que sea llama a una funcion test u otra (por ejemplo
+    en este caso podría llamar al método test de la clase "GacMelonPredicate" o al de la clase "heavyMelonPredicate)
+    dependiendo del tipo de objeto predicate que se le pase al llamar al método
+    */
     public static List<Melon> filterMelons(List<Melon> melons, MelonPredicate predicate) {
 
         if(melons==null) {
@@ -103,6 +110,12 @@ public final class Filters {
         return result;
     }
 
+    /*Este método está creadode manera genérica, para cualquier tipo de objeto de distintas clases.
+    Recibe  la lista del objeto, y un objeto de la Interface Predicate (Esta está implementada de manera
+    genérica también).
+    Comprueba que la lista de objetos no sea null y llama al método test() para comprobar lo que
+    se quiera comprobar, el método test dependerá lo que se haya implementado en el Predicate
+    */
     public static <T> List<T> filter(List<T> list, Predicate<T> predicate) {
         if(list==null) {
             throw new IllegalArgumentException("List cannot be null");
